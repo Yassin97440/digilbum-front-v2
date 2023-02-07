@@ -1,7 +1,8 @@
 <template>
     <div>
-        Some default layout shared across all pages
+
+        <AppHeader />
         <slot />
-        <v-app-bar title="Application bar"></v-app-bar>
+        <AppFooter />
     </div>
 </template>
