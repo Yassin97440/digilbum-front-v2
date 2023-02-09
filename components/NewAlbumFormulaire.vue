@@ -31,9 +31,9 @@
         </v-file-input>
       </v-col>
     </v-row>
-    <v-row>
+    <v-row class="d-flex justify-center mb-6">
       <v-col>
-        <v-btn rounded color="primary" dark @click="test"> Enregister </v-btn>
+        <!-- <v-btn rounded color="primary" dark @click="test"> Enregister </v-btn> -->
       </v-col>
     </v-row>
   </v-container>

@@ -11,6 +11,7 @@ export default defineNuxtConfig({
         },
     },
     modules: [
+        '@pinia/nuxt',
         // @ts-ignore
         // this adds the vuetify vite plugin
         // also produces type errors in the current beta release

@@ -14,9 +14,8 @@
 <script>
 
 export default {
-  name: "InspirePage",
+  name: "NewAlbum",
   data: () => ({
-    files: [],
   }),
 };
 </script>
