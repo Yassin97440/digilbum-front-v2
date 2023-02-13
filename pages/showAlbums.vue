@@ -1,35 +1,34 @@
 <template>
     <v-container>
-        <AlbumListing :albums="albums" /> selectedAlbumPictures.pictures
+        <AlbumListing :albums="albums" />
         <v-carousel>
-            <!-- <v-carousel-item v-for="(picture, i) in " :key="i">
+            <!-- <v-carousel-item v-for="(picture, i) in albums" :key="i">
                 <v-img contain :src="picture.pathFile" height="500px"></v-img>
             </v-carousel-item> -->
         </v-carousel>
     </v-container>
 </template>
 <script>
+import { useAlbumStore } from '~~/stores/AlbumStore';
 import { mapState, mapActions } from "pinia";
 export default {
-    beforeMount() {
-        // this.getAllAlbums();
-        // this.$store.dispatch("getAllAlbums");
-        // console.log("les albums", this.albums);
-    },
-    computed: {
-        // ...mapState({
-        //     albums: (state) => state.albums,
-        //     selectedAlbumPictures: (state) => state.selectedAlbumPictures,
-        // }),
-    },
+
     data() {
         return {
 
         };
     },
+    computed: {
+        ...mapState(useAlbumStore, ["albums"])
+    },
     methods: {
-        // ...mapActions(["getAllAlbums"]),
+        ...mapActions(useAlbumStore, ["getAllAlbums"]),
 
+    },
+    created() {
+        this.getAllAlbums();
+        // this.$store.dispatch("getAllAlbums");
+        // console.log("les albums", this.albums);
     },
 };
 </script>

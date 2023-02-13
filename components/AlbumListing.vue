@@ -2,7 +2,7 @@
   <v-row>
     <v-card class="mx-auto my-12" max-width="374" v-for="(album, i) in albums" :key="i">
       <v-card-title> {{ album.name }}</v-card-title>
-      <!-- <v-img height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png"></v-img>-- pour le v-btn @click="" -->
+      <v-img height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png"></v-img>
       <v-card-actions>
         <v-btn color="deep-purple lighten-2" @click="setSelectedAlbum(album)" text> Regarder l'album </v-btn>
       </v-card-actions>
@@ -20,14 +20,11 @@ import { mapActions, mapState } from 'pinia';
 export default {
   // name: "AlbumListing",
   props: { albums: Array },
-  mounted() {
-    console.log(`the component is now mounted.`);
-  },
   data: () => ({
     // albums: [],
   }),
   methods: {
-    // ...mapActions(useAlbumStore, ["setSelectedAlbum"]),
+    ...mapActions(useAlbumStore, ["setSelectedAlbum"]),
     test() {
       // const album = {
       //   name: this.albumName,

@@ -6,9 +6,9 @@
                     <v-list-item-action>
                         <v-icon>{{ item.icon }}</v-icon>
                     </v-list-item-action>
-                    <v-list-item-content>
-                        <v-list-item-title>{{ item.title }}</v-list-item-title>
-                    </v-list-item-content>
+                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                    <!-- <v-list-item-content> 
+                    </v-list-item-content> -->
                 </v-list-item>
             </v-list>
         </v-navigation-drawer>
@@ -59,6 +59,7 @@ export default {
             drawer: false,
             fixed: false,
             items: [
+
                 {
                     icon: "mdi-home",
                     title: "Acceuil",
