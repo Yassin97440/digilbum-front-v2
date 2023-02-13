@@ -8,7 +8,7 @@ export const useAlbumStore = defineStore('albumStore', {
         selectedAlbumPictures: [],
     }),
     getters: {
-        getAllAlbums: (state) => state.albums,
+        // getAllAlbums: (state) => state.albums,
 
     },
     actions: {
@@ -24,7 +24,8 @@ export const useAlbumStore = defineStore('albumStore', {
             this.albums = data._rawValue;
         },
         setSelectedAlbum(data) {
-            this.selectedAlbumPictures = data;
+            console.log("set selected album : ", {data})
+            this.selectedAlbumPictures = data.pictures;
         }
 
     },

@@ -2,9 +2,9 @@
     <v-container>
         <AlbumListing :albums="albums" />
         <v-carousel>
-            <!-- <v-carousel-item v-for="(picture, i) in albums" :key="i">
+            <v-carousel-item v-for="(picture, i) in selectedAlbumPictures" :key="i">
                 <v-img contain :src="picture.pathFile" height="500px"></v-img>
-            </v-carousel-item> -->
+            </v-carousel-item>
         </v-carousel>
     </v-container>
 </template>
@@ -19,7 +19,7 @@ export default {
         };
     },
     computed: {
-        ...mapState(useAlbumStore, ["albums"])
+        ...mapState(useAlbumStore, ["albums", "selectedAlbumPictures"])
     },
     methods: {
         ...mapActions(useAlbumStore, ["getAllAlbums"]),
