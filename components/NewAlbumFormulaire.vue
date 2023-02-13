@@ -33,7 +33,7 @@
     </v-row>
     <v-row class="d-flex justify-center mb-6">
       <v-col>
-        <!-- <v-btn rounded color="primary" dark @click="test"> Enregister </v-btn> -->
+        <v-btn rounded color="primary" dark @click="test"> Enregister </v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -42,8 +42,8 @@
 
 </style>
 <script>
-// import { mapActions } from "vuex";
-export default {
+import { useAlbumStore } from '~~/stores/AlbumStore';
+import { mapState, mapActions } from "pinia";export default {
   data: () => ({
     files: [],
     albumName: "",
@@ -51,17 +51,17 @@ export default {
     endDate: "",
   }),
   methods: {
-    // ...mapActions(["postNewAlbums"]),
+    ...mapActions(useAlbumStore, ["postNewAlbums"]),
     test() {
-      // const album = {
-      //   name: this.albumName,
-      //   startDate: this.startDate,
-      //   endDate: this.endDate
-      // };
-      // this.$store.dispatch("postNewAlbums", {
-      //   album,
-      //   pictures: this.files,
-      // });
+      const album = {
+        name: this.albumName,
+        startDate: this.startDate,
+        endDate: this.endDate
+      };
+      this.postNewAlbums( {
+        album,
+        pictures: this.files,
+      });
     },
   },
 };

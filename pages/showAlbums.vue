@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <AlbumListing :albums="albums" />
-        <v-carousel>
+        <v-carousel show-arrows="hover" hide-delimiters>
             <v-carousel-item v-for="(picture, i) in selectedAlbumPictures" :key="i">
                 <v-img contain :src="picture.pathFile" height="500px"></v-img>
             </v-carousel-item>
